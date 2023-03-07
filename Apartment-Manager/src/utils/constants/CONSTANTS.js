@@ -3,7 +3,7 @@ import { HomeOutlined, ApartmentOutlined, WindowOutlined,  } from "@mui/icons-ma
 export const menuList = [
     {
         name: 'Home',
-        path: '/',
+        path: '/home',
         icon: <HomeOutlined />
     },
     {

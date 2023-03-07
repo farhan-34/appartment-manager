@@ -1,24 +1,31 @@
 import React from 'react';
-import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Navigate, Outlet, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import { createStructuredSelector } from 'reselect';
 import { Apartment, Home, Login, Rooms } from '../pages';
+import { getAuthSession } from '../redux/authentication/authentication.selectors';
 
-const PrivateRoutes = () => {
-    let auth = {'token': false}
+const PrivateRoutes = (props) => {
     return (
-        auth.token ? <Outlet/> : <Navigate to="/login"/>
+        props.auth ? <Outlet/> : <Navigate to="/login"/>
     )
 }
 
-const AppRouter = () => {
+const AppRouter = (auth) => {
     return (
         <Routes>
-            <Route element={ <PrivateRoutes /> }>
-                <Route path='/' exact element={ <Home />} />
+            <Route element={ <PrivateRoutes auth={auth}/> }>
+                <Route path='/home' exact element={ <Home />} />
                 <Route path='/apartment' element={ <Apartment />} />
                 <Route path='/apartment/:id/rooms' element={ <Rooms /> } />
+                <Route path='*' element={ <Home /> } />
             </Route>
         </Routes>
     )
 }
 
-export default AppRouter
+const mapStateToProps = createStructuredSelector({
+    auth: getAuthSession,
+});
+
+export default connect(mapStateToProps)(AppRouter)

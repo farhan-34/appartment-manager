@@ -1,21 +1,24 @@
 import { Box, Button, Container, Grid, Paper, Stack, TextField, Typography, useTheme } from '@mui/material'
 import React from 'react'
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+import { connect } from 'react-redux';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { createStructuredSelector } from 'reselect';
+import { loginUser } from '../../redux/authentication/authentication.actions'
+import { getAuthSession } from '../../redux/authentication/authentication.selectors';
 
-const Login = () => {
+const Login = ({ loginUser }) => {
 
+  const nav = useNavigate();
   const theme = useTheme();
     const { register, 
         handleSubmit,
         formState: { errors },
     } = useForm();
     const onSubmit = (data) => {
-      // const {username, password} = data
-      // const response = await axios.post(login_url, JSON.stringify({username, password}), {
-      //   headers: { 'Content-Type': 'apllication/json'},
-      //   withCredentials: true
-      // })
-
+      const {username, password} = data
+      loginUser(username, password)
     }
 
   return (
@@ -75,4 +78,8 @@ const Login = () => {
   )
 }
 
-export default Login
+const mapState = createStructuredSelector({
+  auth: getAuthSession
+})
+
+export default connect(mapState, { loginUser })(Login)

@@ -13,7 +13,9 @@ router.post('/login', (req, res) => {
         (err, result) => {
             try {
                 if (!!err) {
+                    console.log(err);
                     res.status(500).send({ err: err.stack });
+                    return;
                 }
                 if (result.rowCount > 0) {
                     bycrypt.compare(password, result.rows[0].password, (error, response) => {
@@ -23,10 +25,10 @@ router.post('/login', (req, res) => {
                                 expiresIn: 300,
                             })
                             res.status(201).json({
-                                auth: true, accessToken: token, user: result[0]
+                                auth: true, accessToken: token, userID: result.rows[0].id
                             })
                         } else {
-                            res.status(200).send({ message: 'You credientials are not correct' })
+                            res.status(200).send({ message: 'You credentials are not correct' })
                         }
                     })
                 }
