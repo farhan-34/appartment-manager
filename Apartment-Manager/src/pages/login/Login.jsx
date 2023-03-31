@@ -3,14 +3,13 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { connect } from 'react-redux';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { createStructuredSelector } from 'reselect';
-import { loginUser } from '../../redux/authentication/authentication.actions'
-import { getAuthSession } from '../../redux/authentication/authentication.selectors';
+import { APIService } from '../../Services/APIService'
 
-const Login = ({ loginUser }) => {
+const Login = () => {
 
-  const nav = useNavigate();
+  const navigate = useNavigate()
   const theme = useTheme();
     const { register, 
         handleSubmit,
@@ -18,7 +17,22 @@ const Login = ({ loginUser }) => {
     } = useForm();
     const onSubmit = (data) => {
       const {username, password} = data
-      loginUser(username, password)
+      console.log(username)
+      // API call to backend to authenticate username and password
+      const apiService = new APIService(true)
+      async function login(){
+        return await apiService.post('/login', {username, password})
+        
+      }
+      login().then((res) => {
+        console.log(res)
+        localStorage.setItem('authToken', res.data.authToken)
+        navigate('/home')
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+      // store the token in local storage
     }
 
   return (
@@ -74,12 +88,9 @@ const Login = ({ loginUser }) => {
       </Container>
       </Paper>
       </Grid>
-      </Grid>
+    </Grid>
   )
 }
 
-const mapState = createStructuredSelector({
-  auth: getAuthSession
-})
 
-export default connect(mapState, { loginUser })(Login)
+export default Login

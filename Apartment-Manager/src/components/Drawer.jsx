@@ -20,9 +20,6 @@ import { menuList } from "../utils/constants/CONSTANTS";
 import { useLocation, useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
 import { Switch } from "@mui/material";
-import { changeThemeMode } from "../redux/theme/theme.actions";
-import { createStructuredSelector } from "reselect";
-import { getThemeMode } from "../redux/theme/theme.selectors";
 
 const drawerWidth = 240;
 
@@ -147,10 +144,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 
 
 const MiniDrawer =
-  ({
-    mode,
-    changeThemeMode
-  }) => {
+  () => {
     const theme = useTheme();
     const [open, setOpen] = useState(false);
 
@@ -171,12 +165,14 @@ const MiniDrawer =
 
     const switchThemeMode = (event) => {
       if (event.target.checked) {
-        changeThemeMode('dark');
+        
       }
       else {
-        changeThemeMode('light');
+        // changeThemeMode('light');
       }
     }
+
+    const mode = 'dark'
 
     return (
       <Box sx={{ background: mode === "light" ? theme.palette.primary.main : theme.palette.background.paper }}>
@@ -251,8 +247,4 @@ const MiniDrawer =
     );
   }
 
-const mapStateToProps = createStructuredSelector({
-  mode: getThemeMode,
-});
-
-export default connect(mapStateToProps, { changeThemeMode })(MiniDrawer);
+export default (MiniDrawer);

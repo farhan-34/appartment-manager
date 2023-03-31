@@ -1,14 +1,179 @@
 import { Add } from '@mui/icons-material'
 import { Fab, Grid } from '@mui/material'
 import React from 'react'
-import { connect } from 'react-redux'
-import { createStructuredSelector } from 'reselect'
-import { selectAllApartments } from '../../redux/apartments/apartments.selectors'
 import ApartmentCard from './ApartmentCard';
 
-const ApartmentLV = ({
-    apartmentList,
-}) => {
+const ApartmentLV = () => {
+    const apartmentList = [
+        {
+            id: 1,
+            title: 'The Central Park North',
+            bedrooms: 2,
+            bathrooms: 1,
+            availability: true,
+            capacity: 3,
+            amenities: [
+                'Carpet',
+                'Wifi',
+                'Furnished',
+                'Air Conditioning',
+                'Parking'
+            ],
+            otherSpaces: [
+                'Kitchen',
+                'Workspace'
+            ],
+            rent: 34000,
+            pictureUrl: 'src/assets/images/apartImage.jpg'
+        },
+        {
+            id: 2,
+            title: 'The Central Park North',
+            bedrooms: 2,
+            bathrooms: 1,
+            availability: true,
+            capacity: 3,
+            amenities: [
+                'Carpet',
+                'Wifi',
+                'Furnished',
+                'Air Conditioning',
+                'Parking'
+            ],
+            otherSpaces: [
+                'Kitchen',
+                'Workspace'
+            ],
+            rent: 34000,
+            pictureUrl: 'src/assets/images/apartImage.jpg'
+        },
+        {
+            id: 3,
+            title: 'The Central Park North',
+            bedrooms: 2,
+            bathrooms: 1,
+            availability: true,
+            capacity: 3,
+            amenities: [
+                'Carpet',
+                'Wifi',
+                'Furnished',
+                'Air Conditioning',
+                'Parking'
+            ],
+            otherSpaces: [
+                'Kitchen',
+                'Workspace'
+            ],
+            rent: 34000,
+            pictureUrl: 'src/assets/images/apartImage.jpg'
+        },
+        {
+            id: 4,
+            title: 'The Central Park North',
+            bedrooms: 2,
+            bathrooms: 1,
+            availability: true,
+            capacity: 3,
+            amenities: [
+                'Carpet',
+                'Wifi',
+                'Furnished',
+                'Air Conditioning',
+                'Parking'
+            ],
+            otherSpaces: [
+                'Kitchen',
+                'Workspace'
+            ],
+            rent: 34000,
+            pictureUrl: 'src/assets/images/apartImage.jpg'
+        },
+        {
+            id: 5,
+            title: 'The Central Park North',
+            bedrooms: 2,
+            bathrooms: 1,
+            availability: true,
+            capacity: 3,
+            amenities: [
+                'Carpet',
+                'Wifi',
+                'Furnished',
+                'Air Conditioning',
+                'Parking'
+            ],
+            otherSpaces: [
+                'Kitchen',
+                'Workspace'
+            ],
+            rent: 34000,
+            pictureUrl: 'src/assets/images/apartImage.jpg'
+        },
+        {
+            id: 6,
+            title: 'The Central Park North',
+            bedrooms: 2,
+            bathrooms: 1,
+            availability: true,
+            capacity: 3,
+            amenities: [
+                'Carpet',
+                'Wifi',
+                'Furnished',
+                'Air Conditioning',
+                'Parking'
+            ],
+            otherSpaces: [
+                'Kitchen',
+                'Workspace'
+            ],
+            rent: 34000,
+            pictureUrl: 'src/assets/images/apartImage.jpg'
+        },
+        {
+            id: 7,
+            title: 'The Central Park North',
+            bedrooms: 2,
+            bathrooms: 1,
+            availability: true,
+            capacity: 3,
+            amenities: [
+                'Carpet',
+                'Wifi',
+                'Furnished',
+                'Air Conditioning',
+                'Parking'
+            ],
+            otherSpaces: [
+                'Kitchen',
+                'Workspace'
+            ],
+            rent: 34000,
+            pictureUrl: 'src/assets/images/apartImage.jpg'
+        },
+        {
+            id: 8,
+            title: 'The Central Park North',
+            bedrooms: 2,
+            bathrooms: 1,
+            availability: true,
+            capacity: 3,
+            amenities: [
+                'Carpet',
+                'Wifi',
+                'Furnished',
+                'Air Conditioning',
+                'Parking'
+            ],
+            otherSpaces: [
+                'Kitchen',
+                'Workspace'
+            ],
+            rent: 34000,
+            pictureUrl: 'src/assets/images/apartImage.jpg'
+        }
+    ]
     return (
         <>
             <Grid container columnSpacing={2} rowGap={2}>
@@ -25,8 +190,5 @@ const ApartmentLV = ({
     )
 }
 
-const mapStateToProps = createStructuredSelector({
-    apartmentList: selectAllApartments,
-})
 
-export default connect(mapStateToProps)(ApartmentLV);
+export default ApartmentLV

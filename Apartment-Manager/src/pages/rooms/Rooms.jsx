@@ -3,7 +3,6 @@ import { Checkbox, Paper, Table, TableBody, TableCell, tableCellClasses, TableCo
 import React from 'react'
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
-import { selectAllRooms } from '../../redux/rooms/rooms.selectors'
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -27,7 +26,31 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     },
 }));
 
-const Rooms = ({rooms}) => {
+const Rooms = () => {
+    const rooms = [
+        {
+            ID: 1,
+            AppartmentId: 1,
+            Rent: 10000,
+            Description: 'middle room',
+            HaveCupboard: true,
+            HaveAC: false,
+            HaveWashroom: true,
+            WashroomType: 'Cammod',
+            UserId: 2
+        },
+        {
+            ID: 2,
+            AppartmentId: 1,
+            Rent: 10000,
+            Description: 'middle room',
+            HaveCupboard: true,
+            HaveAC: false,
+            HaveWashroom: true,
+            WashroomType: 'Cammod',
+            UserId: 2
+        }
+    ]
   return (
       <TableContainer component={Paper}>
           <Table>
@@ -60,8 +83,4 @@ const Rooms = ({rooms}) => {
   )
 }
 
-const mapStateToProps = createStructuredSelector({
-    rooms: selectAllRooms
-})
-
-export default connect(mapStateToProps)(Rooms);
+export default (Rooms);

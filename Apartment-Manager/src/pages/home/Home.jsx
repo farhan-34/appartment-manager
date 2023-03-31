@@ -1,16 +1,15 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { HOC } from '../../components/HOC'
 
 const Home = () => {
 
-  const nav = useNavigate()
-
-  useEffect(() => {
-    nav('/home')
-  }, [])
-
   return (
-    <div>Home</div>
+    <HOC>
+      <div>Home</div>
+    </HOC>
+
+    
   )
 }
 

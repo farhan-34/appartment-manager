@@ -1,6 +1,8 @@
 import { grey, orange } from "@mui/material/colors";
 
-export const getTheme = (mode) => ({
+const mode = 'dark'
+
+export const getTheme = () => ({
     palette: {
         mode,
         ...(mode === 'light' ? {
