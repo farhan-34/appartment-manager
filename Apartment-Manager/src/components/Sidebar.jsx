@@ -1,44 +1,26 @@
 import React from 'react'
-import { ApartmentRounded, HomeOutlined, HouseRounded, ListAltRounded } from '@mui/icons-material'
-import { List, ListItem } from '@mui/material'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import { menuList } from '../utils/constants/CONSTANTS'
 
 
 const Sidebar = () => {
+    const route = useLocation()
+
     return (
 
-        <div class="min-h-screen bg-white overflow-hidden">
-            <ul class="py-4">
-                <li>
-                    <Link to="/home" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
-                        <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><HomeOutlined /></span>
-                        <span class="text-sm font-medium">Home</span>
-                    </Link>
-                </li>
-                <li>
-                    <Link to="/apartment" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
-                        <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><ApartmentRounded /></span>
-                        <span class="text-sm font-medium">Apartment</span>
-                    </Link>
-                </li>
-                <li>
-                    <a href="#" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
-                        <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><HouseRounded /></span>
-                        <span class="text-sm font-medium">My Apartment</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
-                        <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><ListAltRounded /></span>
-                        <span class="text-sm font-medium">Grocery</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
-                        <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-log-out"></i></span>
-                        <span class="text-sm font-medium">Logout</span>
-                    </a>
-                </li>
+        <div className="min-h-screen bg-white overflow-hidden">
+            <ul className="py-4">
+                {
+                    menuList.map((item) => {
+                        const active = route.pathname === item.path ? true : false
+                        return (<li className={`mb-3 py-1 ${active ? 'text-active bg-gradient-to-r from-cyan-100 to-white' : ''}`} key={item.path}>
+                            <Link to={item.path} className='flex'>
+                                <span className={`inline-flex items-center justify-center w-12 h-10 ml-3 text-lg ${active ? 'text-active' : 'text-gray-400'}`}>{item?.icon}</span>
+                                <span className={`inline-flex items-center text-sm`}>{active ? <strong>{item.name}</strong> : item.name}</span>
+                            </Link>
+                        </li>)
+                    })
+                }
             </ul>
         </div>
     )

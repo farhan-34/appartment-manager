@@ -10,10 +10,10 @@ export const HOC = (props) =>{
     return(
       <>
         <Header />
-        <div className='grid grid-cols-7 bg-gray-200'>
-          <div className='col-2'><Sidebar /></div>
-          <div className='col-5 p-10'>
-            <div className='w-100 bg-white rounded'>
+        <div className='grid grid-cols-12 bg-gray-200'>
+          <div className='col-span-2'><Sidebar /></div>
+          <div className='col-span-10 p-10'>
+            <div className='min-w-full bg-white rounded min-h-full p-7'>
               {props.children}
             </div>
           </div>

@@ -1,4 +1,4 @@
-import { HomeOutlined, ApartmentOutlined, WindowOutlined,  } from "@mui/icons-material";
+import { HomeOutlined, ApartmentRounded, HouseRounded, ListAltRounded, LogoutRounded, } from "@mui/icons-material";
 
 export const menuList = [
     {
@@ -9,11 +9,21 @@ export const menuList = [
     {
         name: 'Apartment',
         path: '/apartment',
-        icon: <ApartmentOutlined />
+        icon: <ApartmentRounded />
     },
     {
-        name: 'Rooms',
-        path: '/apartment/:id/rooms',
-        icon: <WindowOutlined />
+        name: 'My Apartment',
+        path: '/apartment/:id',
+        icon: <HouseRounded />
+    },
+    {
+        name: 'Grocery',
+        path: '/grocery',
+        icon: <ListAltRounded />
+    },
+    {
+        name: 'Logout',
+        path: '/logout',
+        icon: <LogoutRounded />
     }
 ]
