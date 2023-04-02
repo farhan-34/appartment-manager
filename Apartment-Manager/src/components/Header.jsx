@@ -54,7 +54,7 @@ export const Header = () => {
 
               <div className="relative ml-5 flex-shrink-0">
                 <div>
-                  <button type="button" onClick={() => setToggleMenu(!toggleMenu)} onBlur={() => setToggleMenu(false)} classNameName="flex rounded-full bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                  <button type="button" onClick={() => setToggleMenu(!toggleMenu)} onBlur={() => setToggleMenu(false)} className="flex rounded-full bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                     <span className="sr-only">Open user menu</span>
                     <img className="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
                   </button>
