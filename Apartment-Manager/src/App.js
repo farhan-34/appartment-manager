@@ -8,13 +8,11 @@ import { createTheme } from "@mui/material/styles";
 
 const App = () => {  
   return (
-    <ThemeProvider theme={createTheme(getTheme())}>
     <BrowserRouter>
         <CssBaseline>
           <AppRouter />
         </CssBaseline>
     </BrowserRouter>
-    </ThemeProvider>
   );
 }
 

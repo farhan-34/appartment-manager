@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React from 'react'
 import { HOC } from '../../components/HOC'
 
 const Home = () => {
-
   return (
     <HOC>
-      <div>Home</div>
+      <h1 className="text-3xl font-bold underline">
+        Hello world!
+      </h1>
     </HOC>
 
     

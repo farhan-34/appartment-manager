@@ -1,7 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { Navigate, Outlet, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
-import { createStructuredSelector } from 'reselect';
+import { Route, Routes, } from 'react-router-dom';
 import { Apartment, Home, Login, Rooms } from '../pages';
 import {PrivateRoute} from './PrivateRoute';
 

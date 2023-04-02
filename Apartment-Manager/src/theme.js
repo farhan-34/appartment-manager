@@ -1,6 +1,6 @@
-import { grey, orange } from "@mui/material/colors";
+import { blue, grey, orange } from "@mui/material/colors";
 
-const mode = 'dark'
+const mode = 'light'
 
 export const getTheme = () => ({
     palette: {
@@ -10,7 +10,7 @@ export const getTheme = () => ({
                 main: '#000',
                 constrastText: '#fff'
             },
-            secondary: orange,
+            secondary: blue,
             text: {
                 primary: '#000',
                 secondary: grey[900],
@@ -24,7 +24,7 @@ export const getTheme = () => ({
                 main: grey[400],
                 contrastText: '#000'
             },
-            secondary: orange,
+                secondary: blue[500],
             text: {
                 primary: '#fff',
                 secondary: grey[400],

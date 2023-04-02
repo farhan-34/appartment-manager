@@ -1,27 +1,23 @@
 import React from 'react'
-import MiniDrawer from "./Drawer";
+import { Header } from "./Header";
 import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import Sidebar from './Sidebar';
 
-
-const DrawerHeader = styled("div")(({ theme }) => ({
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "flex-end",
-    padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
-    ...theme.mixins.toolbar,
-  }));
 
 
 export const HOC = (props) =>{
     return(
-        <>
-        <MiniDrawer />
-            <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-              <DrawerHeader />
-              {props.child}
-            </Box>
+      <>
+        <Header />
+        <div className='grid grid-cols-7 bg-gray-200'>
+          <div className='col-2'><Sidebar /></div>
+          <div className='col-5 p-10'>
+            <div className='w-100 bg-white rounded'>
+              {props.children}
+            </div>
+          </div>
+        </div>
         </>
     )
 }
