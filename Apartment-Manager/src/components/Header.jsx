@@ -6,7 +6,7 @@ export const Header = () => {
   const [toggleMenu, setToggleMenu] = useState(false)
   return (
     <>
-      <header className="bg-white shadow-sm lg:static lg:overflow-y-visible">
+      <header className="bg-white shadow-sm sticky top-0 lg:overflow-y-visible z-50">
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-12 justify-between">
             <div className="items-center col-span-2 flex">

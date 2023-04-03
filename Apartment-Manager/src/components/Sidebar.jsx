@@ -8,8 +8,8 @@ const Sidebar = () => {
 
     return (
 
-        <div className="min-h-screen bg-white overflow-hidden">
-            <ul className="py-4">
+        <div className="h-full bg-white">
+            <ul className="py-4  sticky top-20">
                 {
                     menuList.map((item) => {
                         const active = route.pathname === item.path ? true : false

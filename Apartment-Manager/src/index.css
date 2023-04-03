@@ -17,8 +17,8 @@ code {
 
 
 *::-webkit-scrollbar {
-  width: 12px;
-  border-radius: 25%;
+  width: 0px;
+    display: none;
 }
 
 *::-webkit-scrollbar-track {
