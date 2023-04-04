@@ -1,7 +1,7 @@
-import { Add } from '@mui/icons-material'
-import { Fab, Grid } from '@mui/material'
 import React from 'react'
-import ApartmentCard from './ApartmentCard';
+import BedIcon from '@mui/icons-material/Bed';
+import BathtubIcon from '@mui/icons-material/Bathtub';
+import StraightenIcon from '@mui/icons-material/Straighten';
 
 const ApartmentLV = () => {
     const apartmentList = [
@@ -176,16 +176,44 @@ const ApartmentLV = () => {
     ]
     return (
         <>
-            <Grid container columnSpacing={2} rowGap={2}>
+            <div className='grid grid-cols-12 gap-4 justify-start'>
                 {apartmentList.map((apartment) => (
-                    <Grid item xs={12} sm={12} md={6} lg={4} xl={3} xxl={2} key={apartment.id} sx={{ minWidth: 'auto' }}>
-                        <ApartmentCard apartment={apartment} />
-                    </Grid>
-                ))}
-            </Grid>
-            <Fab color="primary" sx={{ size: { xs: 'medium', md: 'large' } }}>
-                <Add />
-            </Fab>
+                    <div key={apartment.id} className='col-span-3 shadow rounded-2xl bg-white h-fit'>
+                        <div className='h-40 w-full'>
+                            <img className='rounded-2xl h-full w-full object-cover' src={require("../../assets/images/apartImage.jpg")} alt='Apartment' />
+                        </div>
+                        <div className='p-3'>
+                            <strong className='font-extrabold text-lg'>
+                                $ 10,000
+                            </strong>
+                            <p className='text-opacity-75 my-1 text-s'>
+                                Address ali jider iftar kray ga
+                            </p>
+                            <div className='flex gap-4 my-3'>
+                                <div className="">
+                                    <div className="flex flex-row items-center w-fit bg-slate-100 rounded-md py-1 px-2">
+                                        <BedIcon htmlColor='#fb923c' />
+                                        <strong className='font-extrabold text-xs ml-2'>2</strong>
+                                    </div>
+                                </div>
+                                <div className="">
+                                    <div className="flex flex-row items-center w-fit bg-slate-100 rounded-md py-1 px-2">
+                                        <BathtubIcon htmlColor='#22d3ee' />
+                                        <strong className='font-extrabold text-xs ml-2'>2</strong>
+                                    </div>
+                                </div>
+                                <div className="">
+                                    <div className="flex flex-row items-center w-fit bg-slate-100 rounded-md py-1 px-2">
+                                        <StraightenIcon htmlColor='#4ade80' />
+                                        <strong className='font-extrabold text-xs ml-2'>60 m<sup>2</sup></strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ))
+                }
+            </div>
         </>
     )
 }

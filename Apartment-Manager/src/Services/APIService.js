@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { set } from 'react-hook-form'
 
 export class APIService{
     constructor(auth = false){

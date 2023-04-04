@@ -11,9 +11,9 @@ export const Header = () => {
           <div className="grid grid-cols-12 justify-between">
             <div className="items-center col-span-2 flex">
               <div className="flex flex-shrink-0 items-center">
-                <a href="#">
+                <Link to="">
                   <img className="block h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company" />
-                </a>
+                </Link>
               </div>
             </div>
             <div className="items-center col-span-6">

@@ -11,7 +11,6 @@ import TableRow from '@mui/material/TableRow';
 import TableSortLabel from '@mui/material/TableSortLabel';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
 import { visuallyHidden } from '@mui/utils';
 
 function createData(name, calories, fat, carbs, protein) {

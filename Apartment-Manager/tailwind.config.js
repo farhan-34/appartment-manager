@@ -10,7 +10,8 @@ module.exports = {
                 primary: '#00BCD4',
                 secondary: '',
                 disabled: '',
-                active: '#04c4c4'
+                active: '#04c4c4',
+                oragne: '#ea580c'
             }
         },
 
