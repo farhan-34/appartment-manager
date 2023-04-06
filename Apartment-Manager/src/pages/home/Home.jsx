@@ -32,6 +32,38 @@ const Home = () => {
       data: [1, 2, 3, 4, 4, 5, 5, 2, 7, 4, 5]
     }]
   }
+  const data = [
+    {
+      Name: 'Name',
+      Bill: 1201,
+      Items: 'A & B'
+    },
+    {
+      Name: 'Hello',
+      Bill: 1202,
+      Items: 'A & B'
+    },
+    {
+      Name: 'There',
+      Bill: 1200,
+      Items: 'A & B'
+    },
+    {
+      Name: 'How',
+      Bill: 1200,
+      Items: 'A & B'
+    },
+    {
+      Name: 'Are',
+      Bill: 1200,
+      Items: 'A & B'
+    },
+    {
+      Name: 'You',
+      Bill: 1200,
+      Items: 'A & B'
+    },
+  ];
   return (
     <HOC>
       <div>
@@ -89,7 +121,7 @@ const Home = () => {
 
         <div className='grid grid-cols-12 gap-4'>
           <div className='col-span-8 bg-white rounded shadow p-4'>
-            <EnhancedTable />
+            <EnhancedTable model={data} />
           </div>
 
           <div className='col-span-4 bg-white rounded shadow p-4'>
