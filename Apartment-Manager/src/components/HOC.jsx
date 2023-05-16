@@ -8,7 +8,7 @@ export const HOC = (props) =>{
     return(
       <div className='max-h-screen overflow-y-auto'>
         <Header />
-        <div className='grid grid-cols-12 bg-gray-200'>
+        <div className='grid grid-cols-12 bg-gray-100'>
           <div className='col-span-2 h-full'><Sidebar /></div>
           <div className='col-span-10 p-10'>
             <nav className="flex px-7" aria-label="Breadcrumb">
