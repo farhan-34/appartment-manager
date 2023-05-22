@@ -3,7 +3,7 @@ import { HomeOutlined, ApartmentRounded, HouseRounded, ListAltRounded, LogoutRou
 export const menuList = [
     {
         name: 'Home',
-        path: '/home',
+        path: '/',
         icon: <HomeOutlined />
     },
     {

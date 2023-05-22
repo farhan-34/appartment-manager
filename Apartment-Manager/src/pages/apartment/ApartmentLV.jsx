@@ -2,6 +2,7 @@ import React from 'react'
 import BedIcon from '@mui/icons-material/Bed';
 import BathtubIcon from '@mui/icons-material/Bathtub';
 import StraightenIcon from '@mui/icons-material/Straighten';
+import { Link } from 'react-router-dom';
 
 const ApartmentLV = () => {
     const apartmentList = [
@@ -182,6 +183,7 @@ const ApartmentLV = () => {
                         <div className='h-40 w-full'>
                             <img className='rounded-2xl h-full w-full object-cover' src={require("../../assets/images/apartImage.jpg")} alt='Apartment' />
                         </div>
+                        <Link to={"/apartment/1"}>
                         <div className='p-3'>
                             <strong className='font-extrabold text-lg'>
                                 $ 10,000
@@ -210,6 +212,7 @@ const ApartmentLV = () => {
                                 </div>
                             </div>
                         </div>
+                        </Link>
                     </div>
                 ))
                 }
