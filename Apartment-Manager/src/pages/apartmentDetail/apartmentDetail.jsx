@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { HOC } from '../../components/HOC';
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 import HouseIcon from '@mui/icons-material/House';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import BedIcon from '@mui/icons-material/Bed';
@@ -8,14 +7,16 @@ import BathtubIcon from '@mui/icons-material/Bathtub';
 import HouseSidingIcon from '@mui/icons-material/HouseSiding';
 import mapboxgl from 'mapbox-gl';
 
+const mapBoxKey = process.env.MAPBOX_API_KEY;
+mapboxgl.accessToken = "pk.eyJ1IjoiZmFyaGFuMTM0IiwiYSI6ImNreGxqMGZsZzFwdGMyb2tqMHZ2c2Z1djMifQ.BtyQNsfe_XxAcD0eCgtYIg"
+console.log(mapBoxKey);
 
 const ApartmentDetail = () => {
     const imageList = [
 
     ]
 
-    mapboxgl.accessToken = process.env.MAPBOX_API_KEY;
-    console.log(process.env.MAPBOX_API_KEY);
+
     const mapContainer = useRef(null);
     const map = useRef(null);
     const [lng, setLng] = useState(-70.9);
@@ -60,8 +61,8 @@ const ApartmentDetail = () => {
                         </div>
                     </div>
 
-                    <div id='map'>
-                        <div ref={mapContainer} className="h-[400]" />
+                    <div className="h-[400] relative mt-10 rounded">
+                        <div ref={mapContainer} />
                     </div>
                 </div>
                 <div className='col-span-7 rounded-lg bg-slate-200'>
