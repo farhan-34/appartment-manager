@@ -13,7 +13,7 @@ export const menuList = [
     },
     {
         name: 'My Apartment',
-        path: '/apartment/:id',
+        path: '/apartment/myApartment',
         icon: <HouseRounded />
     },
     {

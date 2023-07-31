@@ -8,7 +8,7 @@ import HouseSidingIcon from '@mui/icons-material/HouseSiding';
 import mapboxgl from 'mapbox-gl';
 
 const mapBoxKey = process.env.MAPBOX_API_KEY;
-mapboxgl.accessToken = "pk.eyJ1IjoiZmFyaGFuMTM0IiwiYSI6ImNreGxqMGZsZzFwdGMyb2tqMHZ2c2Z1djMifQ.BtyQNsfe_XxAcD0eCgtYIg"
+mapboxgl.accessToken = "pk.eyJ1IjoiZmFyaGFuMTM0IiwiYSI6ImNsa3I4Ymg3ejA4YjIzZWxqZGVjMnVpNmwifQ.n9lScoAtvLdBsN1AUH8PwA"
 console.log(mapBoxKey);
 
 const ApartmentDetail = () => {
