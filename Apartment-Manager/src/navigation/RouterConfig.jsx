@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Routes, } from 'react-router-dom';
 import { Apartment, Home, Login, Rooms } from '../pages';
 import {PrivateRoute} from './PrivateRoute';
-import ApartmentDetail from '../pages/apartment/apartmentDetail';
+import ApartmentDetail from '../pages/apartmentDetail/apartmentDetail';
 
 const AppRouter = () => {
     return (
